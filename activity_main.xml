@@ -1,720 +1,215 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!-- Toolbar -->
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/primary"
-            app:navigationIcon="@drawable/ic_menu"
-            app:title="Xiang Yuan Hotel"
-            app:titleTextColor="@android:color/white" />
-
-        <!-- Content -->
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:padding="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!-- Stats Row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
-
-                    <!-- Total Rooms -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/primary"
-                        app:cardCornerRadius="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:padding="12dp">
-
-                            <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:src="@drawable/ic_bed"
-                                android:tint="@android:color/white" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="စုစုပေါင်းအခန်း"
-                                android:textColor="@android:color/white"
-                                android:textSize="14sp"
-                                android:layout_marginTop="8dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="45"
-                                android:textColor="@android:color/white"
-                                android:textSize="24sp"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <!-- Current Customers -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/green"
-                        app:cardCornerRadius="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:padding="12dp">
-
-                            <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:src="@drawable/ic_user"
-                                android:tint="@android:color/white" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="လက်ရှိဖောက်သည်"
-                                android:textColor="@android:color/white"
-                                android:textSize="14sp"
-                                android:layout_marginTop="8dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="32"
-                                android:textColor="@android:color/white"
-                                android:textSize="24sp"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <!-- Today Bookings -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/yellow"
-                        app:cardCornerRadius="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:padding="12dp">
-
-                            <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:src="@drawable/ic_calendar"
-                                android:tint="@android:color/white" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ယနေ့ကြိုတင်မှာယူမှု"
-                                android:textColor="@android:color/white"
-                                android:textSize="14sp"
-                                android:layout_marginTop="8dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="8"
-                                android:textColor="@android:color/white"
-                                android:textSize="24sp"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <!-- Available Rooms -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:layout_margin="4dp"
-                        app:cardBackgroundColor="@color/red"
-                        app:cardCornerRadius="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:padding="12dp">
-
-                            <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:src="@drawable/ic_door"
-                                android:tint="@android:color/white" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="လွတ်နေသောအခန်း"
-                                android:textColor="@android:color/white"
-                                android:textSize="14sp"
-                                android:layout_marginTop="8dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="7"
-                                android:textColor="@android:color/white"
-                                android:textSize="24sp"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-                </LinearLayout>
-
-                <!-- Room Status Section -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="အခန်းအခြေအနေများ"
-                    android:textColor="@color/primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="16dp"
-                    android:paddingStart="8dp"
-                    android:drawableStart="@drawable/ic_room"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/primary"/>
-
-                <!-- Room Cards -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- Room 101 -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        app:cardCornerRadius="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/room1"
-                                android:contentDescription="Room 101"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="16dp"
-                                android:gravity="center_vertical">
-
-                                <LinearLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="အခန်း ၁၀၁"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="အခန်းအမျိုးအစား - ဒီလပ်စ်"
-                                        android:textSize="14sp"
-                                        android:layout_marginTop="4dp"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="ဈေးနှုန်း - $80/ည"
-                                        android:textSize="14sp"
-                                        android:layout_marginTop="4dp"/>
-                                </LinearLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="လွတ်နေသည်"
-                                    android:textColor="@color/green"
-                                    android:background="@drawable/status_bg_available"
-                                    android:paddingVertical="4dp"
-                                    android:paddingHorizontal="12dp"
-                                    android:textSize="12sp"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <!-- Room 202 -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        app:cardCornerRadius="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/room2"
-                                android:contentDescription="Room 202"/>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:padding="16dp"
-                                android:gravity="center_vertical">
-
-                                <LinearLayout
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="အခန်း ၂၀၂"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="အခန်းအမျိုးအစား - စံခန်း"
-                                        android:textSize="14sp"
-                                        android:layout_marginTop="4dp"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="ဈေးနှုန်း - $120/ည"
-                                        android:textSize="14sp"
-                                        android:layout_marginTop="4dp"/>
-                                </LinearLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="အသုံးပြုနေဆဲ"
-                                    android:textColor="@color/red"
-                                    android:background="@drawable/status_bg_occupied"
-                                    android:paddingVertical="4dp"
-                                    android:paddingHorizontal="12dp"
-                                    android:textSize="12sp"/>
-                            </LinearLayout>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-                </LinearLayout>
-
-                <!-- Recent Bookings -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="လတ်တလော ကြိုတင်မှာယူမှုများ"
-                    android:textColor="@color/primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="16dp"
-                    android:paddingStart="8dp"
-                    android:drawableStart="@drawable/ic_booking"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/primary"/>
-
-                <!-- Booking Table -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="12dp"
-                    android:layout_marginBottom="24dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="ဖောက်သည်အမည်"
-                            android:textColor="@color/primary"
-                            android:textStyle="bold"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="8dp"/>
-
-                        <!-- Booking 1 -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingVertical="8dp"
-                            android:background="?attr/selectableItemBackground">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="ဦးမြင့်ကြည်"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="၂၀၁"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="စံခန်း"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="၂၀၂၃-၁၀-၁၅"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="၂၀၂၃-၁၀-၁၇"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="အတည်ပြုပြီး"
-                                android:textColor="@color/green"
-                                android:textSize="14sp"/>
-                        </LinearLayout>
-
-                        <!-- Booking 2 -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingVertical="8dp"
-                            android:background="?attr/selectableItemBackground">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="ဒေါ်ခင်ခင်ဝေ"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="၃၀၂"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="ဒီလပ်စ် စူပါ"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="၂၀၂၃-၁၀-၁၆"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="၂၀၂၃-၁၀-၁၉"
-                                android:textSize="14sp"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="ဆိုင်းငံ့ထား"
-                                android:textColor="@color/yellow"
-                                android:textSize="14sp"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Quick Actions -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="လုပ်ဆောင်ချက်များ"
-                    android:textColor="@color/primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="16dp"
-                    android:paddingStart="8dp"
-                    android:drawableStart="@drawable/ic_action"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/primary"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@drawable/rounded_bg"
-                    android:padding="16dp">
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="အခန်းအသစ်ထည့်ရန်"
-                        android:textColor="@android:color/white"
-                        android:drawableStart="@drawable/ic_add"
-                        android:drawableTint="@android:color/white"
-                        android:backgroundTint="@color/primary"
-                        android:paddingVertical="12dp"
-                        android:layout_marginBottom="8dp"
-                        style="@style/Widget.MaterialComponents.Button"/>
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="ဖောက်သည်အသစ်ထည့်ရန်"
-                        android:textColor="@android:color/white"
-                        android:drawableStart="@drawable/ic_user_add"
-                        android:drawableTint="@android:color/white"
-                        android:backgroundTint="@color/green"
-                        android:paddingVertical="12dp"
-                        android:layout_marginBottom="8dp"
-                        style="@style/Widget.MaterialComponents.Button"/>
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="ကြိုတင်မှာယူမှုအသစ်"
-                        android:textColor="@android:color/white"
-                        android:drawableStart="@drawable/ic_calendar_add"
-                        android:drawableTint="@android:color/white"
-                        android:backgroundTint="@color/blue"
-                        android:paddingVertical="12dp"
-                        android:layout_marginBottom="8dp"
-                        style="@style/Widget.MaterialComponents.Button"/>
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="ငွေစာရင်းထုတ်ရန်"
-                        android:textColor="@android:color/white"
-                        android:drawableStart="@drawable/ic_invoice"
-                        android:drawableTint="@android:color/white"
-                        android:backgroundTint="@color/yellow"
-                        android:paddingVertical="12dp"
-                        style="@style/Widget.MaterialComponents.Button"/>
-                </LinearLayout>
-
-                <!-- Room Types -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="အခန်းအမျိုးအစားများ"
-                    android:textColor="@color/primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="16dp"
-                    android:paddingStart="8dp"
-                    android:drawableStart="@drawable/ic_room_type"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/primary"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@drawable/rounded_bg"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="8px"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="ဒီလပ်စ်"
-                            android:textSize="16sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="15"
-                            android:background="@drawable/badge_bg"
-                            android:textColor="@android:color/white"
-                            android:paddingVertical="4dp"
-                            android:paddingHorizontal="12dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="8px"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="ဒီလပ်စ် စူပါ"
-                            android:textSize="16sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="10"
-                            android:background="@drawable/badge_bg"
-                            android:textColor="@android:color/white"
-                            android:paddingVertical="4dp"
-                            android:paddingHorizontal="12dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="8px"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="စံခန်း"
-                            android:textSize="16sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="12"
-                            android:background="@drawable/badge_bg"
-                            android:textColor="@android:color/white"
-                            android:paddingVertical="4dp"
-                            android:paddingHorizontal="12dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="8px"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="သီးသန့်ခန်း"
-                            android:textSize="16sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="8"
-                            android:background="@drawable/badge_bg"
-                            android:textColor="@android:color/white"
-                            android:paddingVertical="4dp"
-                            android:paddingHorizontal="12dp"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Footer -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="© 2023 Xiang Yuan Hotel - စီမံခန့်ခွဲမှုစနစ်"
-                    android:textColor="@color/gray"
-                    android:textSize="12sp"
-                    android:gravity="center"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="16dp"/>
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-
-    <!-- Navigation Drawer -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu" />
-</androidx.drawerlayout.widget.DrawerLayout>
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>နမ့်ခမ်းမြို့မ ပြည်သူ့စစ်ဌာ​နေ
+အဖွဲ့</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <a href="#" class="back-arrow">&#8592;</a>
+    <h1>နမ့်ခမ်းမြို့မ ပြည်သူ့စစ်ဌာ​နေ
+အဖွဲ့Data</h1>
+    <button class="publish-btn">Publish</button>
+</div>
+
+<div class="image-carousel-container">
+    <button class="carousel-btn left-arrow">&#8249;</button>
+    <div class="image-carousel">
+        <img src="https://via.placeholder.com/600x300/404040/FFFFFF/?text=Image+1" alt="Placeholder Image 1">
+        <img src="https://via.placeholder.com/600x300/505050/FFFFFF/?text=Image+2" alt="Placeholder Image 2">
+    </div>
+    <button class="carousel-btn right-arrow">&#8250;</button>
+</div>
+
+<div class="container">
+
+    <div class="card card-green">
+        <div class="card-content">
+            <h3>နမ့်ခမ်းမြို့မ ပြည်သူ့စစ်ဌာ​နေအဖွဲ့
+</h3>
+            <p>အဖွဲ့ချုပ်</p>
+            <p class="details">အဖွဲ့ဝင်: (၃၂ + ၄၅ = ၇၇)</p>
+        </div>
+        <div class="card-icon">&#8594;</div>
+    </div>
+
+    <div class="card card-red">
+        <div class="card-content">
+            <h3>နမ့်ခမ်းမြို့မ ပြည်သူ့စစ်ဌာ​နေအဖွဲ့</h3>
+            <p>(၁)</p>
+            <p class="details">အဖွဲ့ဝင်: (၃၂ + ၄၅ = ၇၇)</p>
+        </div>
+        <div class="card-icon">&#8594;</div>
+    </div>
+    
+    <div class="card card-purple">
+        <div class="card-content">
+            <h3>နမ့်ခမ်းမြို့မ ပြည်သူ့စစ်ဌာ​နေအဖွဲ့</h3>
+            <p>(၂)</p>
+            <p class="details">အဖွဲ့ဝင်: (၃၂ + ၄၅ = ၇၇)</p>
+            <p class="personal-info">32/65 Personal</p>
+        </div>
+        <div class="card-icon">&#8594;</div>
+    </div>
+
+    <div class="card card-orange">
+        <div class="card-content">
+            <h3>နမ့်ခမ်းမြို့မ ပြည်သူ့စစ်ဌာ​နေအဖွဲ့
+</h3>
+            <p>(၃)</p>
+            <p class="details">အဖွဲ့ဝင်: (၃၂ + ၄၅ = ၇၇)</p>
+            <p class="personal-info">41/65 Personal</p>
+        </div>
+        <div class="card-icon">&#8594;</div>
+    </div>
+
+</div>
+
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.header {
+    background-color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.back-arrow {
+    font-size: 24px;
+    text-decoration: none;
+    color: #007bff;
+    padding-right: 15px;
+}
+
+.publish-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.image-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-carousel {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-carousel img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.carousel-btn.left-arrow {
+    left: 10px;
+}
+
+.carousel-btn.right-arrow {
+    right: 10px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.details {
+    opacity: 0.8;
+}
+
+.personal-info {
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.card-icon {
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.card-yellow { background-color: #ffc107; }
+.card-green { background-color: #28a745; }
+.card-red { background-color: #dc3545; }
+.card-purple { background-color: #6f42c1; }
+.card-orange { background-color: #fd7e14; }
